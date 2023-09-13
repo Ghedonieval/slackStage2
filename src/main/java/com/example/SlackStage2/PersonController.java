@@ -24,13 +24,6 @@ public class PersonController {
         return exist;
     }
 
-
-//    @GetMapping("/userName/{name}")
-//    public Person getByName(@PathVariable("name") String name){
-//        var exist = personRepository.findByName(name);
-//        return exist;
-//    }
-
     @GetMapping("/name")
     public Person getByName(@RequestParam("name") String name){
         var exist = personRepository.findByName(name);
@@ -41,7 +34,7 @@ public class PersonController {
     public Person addPerson(@RequestBody Person request ){
         Person person = new Person();
         person.setName(request.getName());
-        person.setAge(request.getAge());
+
         personRepository.save(person);
         return person;
     }
@@ -61,16 +54,6 @@ public class PersonController {
         return "USER DOES NOT EXIST";
     }
 
-//    @DeleteMapping("/userName/{user_name}")
-//    public String deleteByName(@PathVariable("user_name") String name){
-//        var exist = personRepository.findByName(name);
-//        if (exist != null){
-//            personRepository.delete(exist);
-//            return "DELETED SUCCESSFULLY";
-//        }
-//        return "USER DOES NOT EXIST";
-//    }
-
     @DeleteMapping("/name")
     public String deleteByName(@RequestParam("name") String name){
         var exist = personRepository.findByName(name);
@@ -85,25 +68,14 @@ public class PersonController {
     public Person updatePersonById(@PathVariable("user_id") int user_id , @RequestBody Person request){
      var exist = personRepository.findById(user_id);
      exist.setName(request.getName());
-     exist.setAge(request.getAge());
 
      return personRepository.save(exist);
     }
-
-//    @PutMapping("/userName/{user_name}")
-//    public Person updatePersonByName(@PathVariable("user_name") String name , @RequestBody Person request){
-//        var exist = personRepository.findByName(name);
-//        exist.setName(request.getName());
-//        exist.setAge(request.getAge());
-//
-//        return personRepository.save(exist);
-//    }
 
     @PutMapping("/name")
     public Person updatePersonByName(@RequestParam("name") String name , @RequestBody Person request){
         var exist = personRepository.findByName(name);
         exist.setName(request.getName());
-        exist.setAge(request.getAge());
 
         return personRepository.save(exist);
     }

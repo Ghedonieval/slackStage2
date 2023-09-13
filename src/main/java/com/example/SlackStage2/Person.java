@@ -20,8 +20,8 @@ public class Person {
     @Pattern(regexp = "^[a-zA-Z ]+$" , message = "Field should only contain letters")
     private String name;
 
-    @NotNull
-    @Min(1)
-    @Max(200)
-    private int age;
+//    @NotNull
+//    @Min(1)
+//    @Max(200)
+//    private int age;
 }

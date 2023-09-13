@@ -26,16 +26,14 @@ Example Request:
     Content-Type: application/json
 
         {
-        "name": "John Doe",
-        "age": 30,
+        "name": "John Doe"
         }
 
 Example Response:
 
         {
             "id": 1,
-            "name": "John Doe",
-            "age": 30
+            "name": "John Doe"
         }
 
 2. Retrieve a Person by ID
@@ -50,8 +48,7 @@ Example Response:
 
         {
             "id": 1,
-            "name": "John Doe",
-            "age": 30
+            "name": "John Doe"
         }
 
 3. Retrieve a Person by Name
@@ -66,8 +63,7 @@ Example Response:
 
         {
             "id": 1,
-            "name": "John Doe",
-            "age": 30
+            "name": "John Doe"
         }
 
 4. Update a Person by ID
@@ -81,16 +77,14 @@ Example Request:
     Content-Type: application/json
 
         {
-            "name": "Updated Name",
-            "age": 35
+            "name": "Updated Name"
         }
 
 Example Response:
 
         {
             "id": 1,
-            "name": "Updated Name",
-            "age": 35
+            "name": "Updated Name"
         }
 
 5. Update a Person by Name
@@ -104,8 +98,7 @@ Example Request:
     Content-Type: application/json
 
         {
-            "name": "Updated Name",
-            "age": 35
+            "name": "Updated Name"
         }
 
 Example Response:
@@ -113,7 +106,6 @@ Example Response:
         {
             "id": 1,
             "name": "Updated Name",
-            "age": 35
         }
 
 5. Delete a Person by ID

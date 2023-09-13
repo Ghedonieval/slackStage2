@@ -21,9 +21,7 @@ The API should provide the following endpoints for managing "person" records:
 
                  {
 
-                     "name": "Mark Essien",
-
-                     "age": 30
+                     "name": "Mark Essien"
 
                  }
 
@@ -87,8 +85,7 @@ Example API request to create a person:
 POST /api
 
               {
-                  "name": "Alice Smith",
-                  "age": 25,
+                  "name": "Alice Smith"
               }
 
 # Contribution
