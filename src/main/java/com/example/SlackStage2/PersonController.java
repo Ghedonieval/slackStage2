@@ -1,11 +1,6 @@
 package com.example.SlackStage2;
 
-import jakarta.validation.Valid;
-import jakarta.validation.ValidationException;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,8 +24,15 @@ public class PersonController {
         return exist;
     }
 
-    @GetMapping("/userName/{user_name}")
-    public Person getByName(@PathVariable("user_name") String name){
+
+//    @GetMapping("/userName/{name}")
+//    public Person getByName(@PathVariable("name") String name){
+//        var exist = personRepository.findByName(name);
+//        return exist;
+//    }
+
+    @GetMapping("/name")
+    public Person getByName(@RequestParam("name") String name){
         var exist = personRepository.findByName(name);
         return exist;
     }
@@ -59,8 +61,18 @@ public class PersonController {
         return "USER DOES NOT EXIST";
     }
 
-    @DeleteMapping("/userName/{user_name}")
-    public String deleteByName(@PathVariable("user_name") String name){
+//    @DeleteMapping("/userName/{user_name}")
+//    public String deleteByName(@PathVariable("user_name") String name){
+//        var exist = personRepository.findByName(name);
+//        if (exist != null){
+//            personRepository.delete(exist);
+//            return "DELETED SUCCESSFULLY";
+//        }
+//        return "USER DOES NOT EXIST";
+//    }
+
+    @DeleteMapping("/name")
+    public String deleteByName(@RequestParam("name") String name){
         var exist = personRepository.findByName(name);
         if (exist != null){
             personRepository.delete(exist);
@@ -78,8 +90,17 @@ public class PersonController {
      return personRepository.save(exist);
     }
 
-    @PutMapping("/userName/{user_name}")
-    public Person updatePersonByName(@PathVariable("user_name") String name , @RequestBody Person request){
+//    @PutMapping("/userName/{user_name}")
+//    public Person updatePersonByName(@PathVariable("user_name") String name , @RequestBody Person request){
+//        var exist = personRepository.findByName(name);
+//        exist.setName(request.getName());
+//        exist.setAge(request.getAge());
+//
+//        return personRepository.save(exist);
+//    }
+
+    @PutMapping("/name")
+    public Person updatePersonByName(@RequestParam("name") String name , @RequestBody Person request){
         var exist = personRepository.findByName(name);
         exist.setName(request.getName());
         exist.setAge(request.getAge());
