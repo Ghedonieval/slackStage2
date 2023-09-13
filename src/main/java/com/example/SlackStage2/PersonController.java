@@ -56,7 +56,7 @@ public class PersonController {
         var exist = personRepository.findById(user_id);
         if (exist != null){
             personRepository.delete(exist);
-            return "DELETED SUCCESSFULLY";
+            return "ID " +user_id+ ", DELETED SUCCESSFULLY";
         }
         return "USER DOES NOT EXIST";
     }
@@ -76,7 +76,7 @@ public class PersonController {
         var exist = personRepository.findByName(name);
         if (exist != null){
             personRepository.delete(exist);
-            return "DELETED SUCCESSFULLY";
+            return name.toUpperCase()+ "DELETED SUCCESSFULLY";
         }
         return "USER DOES NOT EXIST";
     }
