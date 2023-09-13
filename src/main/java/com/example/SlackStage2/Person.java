@@ -1,6 +1,7 @@
 package com.example.SlackStage2;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,9 +14,14 @@ import lombok.NoArgsConstructor;
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int user_id;
 
+    @NotBlank
+    @Pattern(regexp = "^[a-zA-Z ]+$" , message = "Field should only contain letters")
     private String name;
 
+    @NotNull
+    @Min(1)
+    @Max(200)
     private int age;
 }

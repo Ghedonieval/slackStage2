@@ -1,10 +1,14 @@
 package com.example.SlackStage2;
 
+import jakarta.validation.Valid;
+import jakarta.validation.ValidationException;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -19,8 +23,20 @@ public class PersonController {
         return  getPerson;
     }
 
+    @GetMapping("/{user_id}")
+    public Person getByUser_id(@PathVariable("user_id") int id){
+        var exist = personRepository.findById(id);
+        return exist;
+    }
+
+    @GetMapping("/userName/{user_name}")
+    public Person getByName(@PathVariable("user_name") String name){
+        var exist = personRepository.findByName(name);
+        return exist;
+    }
+
     @PostMapping
-    public Person addPerson(@RequestBody Person request){
+    public Person addPerson(@RequestBody Person request ){
         Person person = new Person();
         person.setName(request.getName());
         person.setAge(request.getAge());
@@ -33,12 +49,41 @@ public class PersonController {
          personRepository.deleteAll();;
     }
 
-    @PutMapping("{updatebyid}")
-    public Person updatePersonById(@PathVariable("updatebyid") int id , @RequestBody Person request){
-     var exist = personRepository.findById(id);
+    @DeleteMapping("/{user_id}")
+    public String deleteByUser_id(@PathVariable("user_id") int user_id){
+        var exist = personRepository.findById(user_id);
+        if (exist != null){
+            personRepository.delete(exist);
+            return "DELETED SUCCESSFULLY";
+        }
+        return "USER DOES NOT EXIST";
+    }
+
+    @DeleteMapping("/userName/{user_name}")
+    public String deleteByName(@PathVariable("user_name") String name){
+        var exist = personRepository.findByName(name);
+        if (exist != null){
+            personRepository.delete(exist);
+            return "DELETED SUCCESSFULLY";
+        }
+        return "USER DOES NOT EXIST";
+    }
+
+    @PutMapping("{user_id}")
+    public Person updatePersonById(@PathVariable("user_id") int user_id , @RequestBody Person request){
+     var exist = personRepository.findById(user_id);
      exist.setName(request.getName());
      exist.setAge(request.getAge());
 
      return personRepository.save(exist);
+    }
+
+    @PutMapping("/userName/{user_name}")
+    public Person updatePersonByName(@PathVariable("user_name") String name , @RequestBody Person request){
+        var exist = personRepository.findByName(name);
+        exist.setName(request.getName());
+        exist.setAge(request.getAge());
+
+        return personRepository.save(exist);
     }
 }
