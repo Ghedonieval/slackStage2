@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.SlackStage2.SlackStage2ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.528 s - in com.example.SlackStage2.SlackStage2ApplicationTests
