@@ -61,6 +61,12 @@ The API should provide the following endpoints for managing "person" records:
    * Endpoint: DELETE /api/name?name={name}
    * Description: Delete a person's record by their unique ID.
 
+# UML Diagrams
+System Design UML Diagram:
+
+![SlackStage2Application.png](SlackStage2Application.png)
+
+This diagram represents the overall system architecture showing the methods, properties, inner classes and dependencies
 
 # Getting Started
 To set up and run this API on your local machine, follow these general steps:
@@ -90,3 +96,4 @@ POST /api
 
 # Contribution
 Contributions to this project are welcome. You can contribute by improving the existing code, adding new features, or fixing issues.
+

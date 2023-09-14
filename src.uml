@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/asiko/Downloads/SlackStage2/src</OriginalElement>
+  <nodes>
+    <node x="101.0" y="34.0">com.example.SlackStage2.PersonRepository</node>
+    <node x="-117.0" y="190.0">com.example.SlackStage2.PersonController</node>
+    <node x="-138.0" y="469.0">com.example.SlackStage2.SlackStage2ApplicationTests</node>
+    <node x="169.0" y="469.0">com.example.SlackStage2.SlackStage2Application</node>
+    <node x="-138.0" y="-15.0">com.example.SlackStage2.Person</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.SlackStage2.PersonController" target="com.example.SlackStage2.PersonRepository" relationship="TO_ONE">
+      <point x="83.5" y="-129.5" />
+      <point x="133.5" y="180.0" />
+      <point x="210.0" y="180.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="com.example.SlackStage2.PersonController" target="com.example.SlackStage2.Person" relationship="CREATE">
+      <point x="-83.5" y="-129.5" />
+      <point x="0.0" y="92.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6155202821869489" showDependencies="true" x="142.5000000000001" y="268.50000000000006" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
