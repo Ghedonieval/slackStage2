@@ -1,4 +1,4 @@
-package com.example.SlackStage2;
+package com.example.SlackStage2.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

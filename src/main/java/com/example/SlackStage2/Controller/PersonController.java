@@ -1,5 +1,7 @@
-package com.example.SlackStage2;
+package com.example.SlackStage2.Controller;
 
+import com.example.SlackStage2.Entity.Person;
+import com.example.SlackStage2.Repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
